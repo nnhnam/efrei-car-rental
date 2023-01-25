@@ -13,6 +13,14 @@ export class CreateAccount implements CreateAccountUseCase {
         newAccount.email = account.email;
         newAccount.firstName = account.firstName;
         newAccount.lastName = account.lastName;
-        await this.repository.save(account);
+        const createdAccount = await this.repository.save(account);
+        return createdAccount
+            ? {
+                  id: createdAccount.id,
+                  email: createdAccount.email,
+                  firstName: createdAccount.firstName,
+                  lastName: createdAccount.lastName
+              }
+            : null;
     }
 }

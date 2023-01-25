@@ -3,7 +3,7 @@ import { Account, AccountResponseModel } from '../../models/account';
 import { GetOneAccountUseCase } from '../../interfaces/use-cases/account/get-one-account-use-case';
 import { Repository } from 'typeorm';
 
-export class GetOneAccounts implements GetOneAccountUseCase {
+export class GetOneAccount implements GetOneAccountUseCase {
     repository: Repository<Account>;
     constructor(repository: Repository<Account>) {
         this.repository = repository;
