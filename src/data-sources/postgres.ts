@@ -1,6 +1,7 @@
 import { DataSource } from 'typeorm';
 import { Account } from '../domain/models/account';
 import { Car } from '../domain/models/car';
+import { Cart } from '../domain/models/cart';
 
 export function getPGDS() {
     const dataSource = new DataSource({
@@ -13,7 +14,7 @@ export function getPGDS() {
         database: 'carrental',
         synchronize: true,
         logging: true,
-        entities: [Account, Car],
+        entities: [Account, Car, Cart],
         subscribers: [],
         migrations: []
     });

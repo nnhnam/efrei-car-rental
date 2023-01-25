@@ -18,6 +18,7 @@ export default function CarsRouter(
                 const cars = await getAllCarsUseCase.execute();
                 res.send(cars);
             } catch (err) {
+                console.error(err);
                 res.status(500).send({ message: 'Error fetching data' });
             }
         })();
@@ -29,6 +30,7 @@ export default function CarsRouter(
                 const cars = await getOneCarUseCase.execute(req.params.id);
                 res.send(cars);
             } catch (err) {
+                console.error(err);
                 res.status(500).send({ message: 'Error fetching data' });
             }
         })();
