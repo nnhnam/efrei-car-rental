@@ -13,11 +13,12 @@ export class GetAllCars implements GetAllCarsUseCase {
         const allCars = await this.repository.find();
         return allCars.map((car) => {
             return {
-                id: car.id,
+                carId: car.id,
                 brand: car.brand,
                 model: car.model,
                 registrationNum: car.registrationNum,
-                type: car.type
+                type: car.type,
+                price: car.price
             };
         });
     }

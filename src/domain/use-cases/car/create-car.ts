@@ -14,14 +14,16 @@ export class CreateCar implements CreateCarUseCase {
         newCar.model = car.model;
         newCar.registrationNum = car.registrationNum;
         newCar.type = car.type;
+        newCar.price = car.price;
         const createdCar = await this.repository.save(car);
         return createdCar
             ? {
-                  id: createdCar.id,
+                  carId: createdCar.id,
                   brand: createdCar.brand,
                   model: createdCar.model,
                   registrationNum: createdCar.registrationNum,
-                  type: createdCar.type
+                  type: createdCar.type,
+                  price: createdCar.price
               }
             : null;
     }

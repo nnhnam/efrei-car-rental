@@ -17,7 +17,7 @@ export class GetOneAccount implements GetOneAccountUseCase {
         });
         return account
             ? {
-                  id: account.id,
+                  accountId: account.id,
                   email: account.email,
                   firstName: account.firstName,
                   lastName: account.lastName

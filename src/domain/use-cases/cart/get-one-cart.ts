@@ -21,7 +21,7 @@ export class GetOneCart implements GetOneCartUseCase {
         });
         return cart
             ? {
-                  id: cart.id,
+                  cartId: cart.id,
                   accountId: cart.account.id,
                   cars: cart.cars
               }

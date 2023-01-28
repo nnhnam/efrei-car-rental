@@ -1,22 +1,22 @@
 import express from 'express';
 import { Request, Response } from 'express';
-import { CreateCarUseCase } from '../../domain/interfaces/use-cases/car/create-car-use-case';
-import { GetAllCarsUseCase } from '../../domain/interfaces/use-cases/car/get-all-cars-use-case';
-import { GetOneCarUseCase } from '../../domain/interfaces/use-cases/car/get-one-car-use-case';
-import { CarRequestModel } from '../../domain/models/car';
+import { GetAllPaymentsUseCase } from '../../domain/interfaces/use-cases/payment/get-all-payments-use-case';
+import { GetOnePaymentUseCase } from '../../domain/interfaces/use-cases/payment/get-one-payment-use-case';
+import { PaymentRequestModel } from '../../domain/models/payment';
+import { CreatePaymentUseCase } from '../../domain/interfaces/use-cases/payment/create-payment-use-case';
 
-export default function CarsRouter(
-    getAllCarsUseCase: GetAllCarsUseCase,
-    getOneCarUseCase: GetOneCarUseCase,
-    createCarUseCase: CreateCarUseCase
+export default function PaymentsRouter(
+    getAllPaymentsUseCase: GetAllPaymentsUseCase,
+    getOnePaymentUseCase: GetOnePaymentUseCase,
+    createPayment: CreatePaymentUseCase
 ) {
     const router = express.Router();
 
     router.get('/', (req: Request, res: Response) => {
         void (async () => {
             try {
-                const cars = await getAllCarsUseCase.execute();
-                res.send(cars);
+                const payments = await getAllPaymentsUseCase.execute();
+                res.send(payments);
             } catch (err) {
                 console.error(err);
                 res.status(500).send({ message: 'Error fetching data' });
@@ -27,8 +27,10 @@ export default function CarsRouter(
     router.get('/:id', (req: Request, res: Response) => {
         void (async () => {
             try {
-                const car = await getOneCarUseCase.execute(req.params.id);
-                res.send(car);
+                const payment = await getOnePaymentUseCase.execute(
+                    req.params.id
+                );
+                res.send(payment);
             } catch (err) {
                 console.error(err);
                 res.status(500).send({ message: 'Error fetching data' });
@@ -39,10 +41,10 @@ export default function CarsRouter(
     router.post('/', (req: Request, res: Response) => {
         void (async () => {
             try {
-                const parseBody = req.body as CarRequestModel;
-                const car = await createCarUseCase.execute(parseBody);
+                const parseBody = req.body as PaymentRequestModel;
+                const payment = await createPayment.execute(parseBody);
                 res.statusCode = 201;
-                res.json(car);
+                res.json(payment);
             } catch (err) {
                 console.log(err);
                 res.status(500).send({ message: 'Error saving data' });

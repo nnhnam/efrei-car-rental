@@ -13,7 +13,7 @@ export class GetAllAccounts implements GetAllAccountsUseCase {
         const allAccounts = await this.repository.find();
         return allAccounts.map((account) => {
             return {
-                id: account.id,
+                accountId: account.id,
                 email: account.email,
                 firstName: account.firstName,
                 lastName: account.lastName

@@ -30,8 +30,8 @@ export default function AccountsRouter(
         void (async () => {
             try {
                 const id = req.params.id;
-                const accounts = await getOneAccountUseCase.execute(id);
-                res.send(accounts);
+                const account = await getOneAccountUseCase.execute(id);
+                res.send(account);
             } catch (err) {
                 console.error(err);
                 res.status(500).send({ message: 'Error fetching data' });

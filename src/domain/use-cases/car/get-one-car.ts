@@ -17,11 +17,12 @@ export class GetOneCar implements GetOneCarUseCase {
         });
         return car
             ? {
-                  id: car.id,
+                  carId: car.id,
                   brand: car.brand,
                   model: car.model,
                   registrationNum: car.registrationNum,
-                  type: car.type
+                  type: car.type,
+                  price: car.price
               }
             : null;
     }

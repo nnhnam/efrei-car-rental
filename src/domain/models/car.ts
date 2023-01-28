@@ -16,6 +16,9 @@ export class Car {
 
     @Column()
     type!: string;
+
+    @Column()
+    price!: number;
 }
 
 export interface CarRequestModel {
@@ -23,12 +26,14 @@ export interface CarRequestModel {
     brand: string;
     model: string;
     type: string;
+    price: number;
 }
 
 export interface CarResponseModel {
-    id: string;
+    carId: string;
     registrationNum: string;
     brand: string;
     model: string;
     type: string;
+    price: number;
 }

@@ -4,7 +4,8 @@ import {
     OneToOne,
     JoinColumn,
     JoinTable,
-    ManyToMany
+    ManyToMany,
+    Column
 } from 'typeorm';
 import { Account } from './account';
 import { Car } from './car';
@@ -28,7 +29,7 @@ export interface CartRequestModel {
 }
 
 export interface CartResponseModel {
-    id: string;
+    cartId: string;
     accountId: string;
     cars: Car[];
 }

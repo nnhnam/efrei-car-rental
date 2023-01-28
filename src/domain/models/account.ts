@@ -22,7 +22,7 @@ export interface AccountRequestModel {
 }
 
 export interface AccountResponseModel {
-    id: string;
+    accountId: string;
     email: string;
     firstName: string;
     lastName: string;

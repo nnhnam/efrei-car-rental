@@ -16,7 +16,7 @@ export class CreateAccount implements CreateAccountUseCase {
         const createdAccount = await this.repository.save(account);
         return createdAccount
             ? {
-                  id: createdAccount.id,
+                  accountId: createdAccount.id,
                   email: createdAccount.email,
                   firstName: createdAccount.firstName,
                   lastName: createdAccount.lastName
