@@ -10,8 +10,6 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB : carrental
-    volumes:
-      - ./db:/docker-entrypoint-initdb.d/
   pgadmin:
     image: dpage/pgadmin4
     container_name: pgadmin4_container
