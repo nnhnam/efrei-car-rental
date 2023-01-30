@@ -148,3 +148,17 @@ The data layer holds all infrastructure implementations (data sources).
 
 The providers holds utils to communicates with external services (payment,
 email).
+
+## Architecture
+
+![class-diagram](diagrams/class-diagram.png)
+
+![account-controller-diagram](diagrams/account-controller-diagram.png)
+
+![car-controller-diagram](diagrams/car-controller-diagram.png)
+
+![cart-controller-diagram](diagrams/cart-controller-diagram.png)
+
+![reservation-controller-diagram](diagrams/reservation-controller-diagram.png)
+
+![payment-controller-diagram](diagrams/payment-controller-diagram.png)
