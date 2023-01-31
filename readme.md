@@ -4,6 +4,8 @@ Github repo: https://github.com/nnhnam/efrei-car-rental
 
 ## How to start the server
 
+Prerequisites: Docker, npm
+
 Start docker compose to run the Postgres server
 
 ```
@@ -48,6 +50,8 @@ npm start
 | GET /payment/:id      | Get a payment with id                    | N/A                                                                                                       | paymentId: string; total: number; paymentMethod: string; paymentDate: Date; reservationId: string;                                               |
 
 ## Testing steps
+
+The Postman file can be found in `Efrei Car Rental.postman_collection.json`
 
 1. Create an account using POST /account
 2. Create a car using POST /car
