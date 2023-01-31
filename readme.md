@@ -1,4 +1,6 @@
-# EFREI car rental
+# EFREI car rental (Group SE1-05)
+
+Github repo: https://github.com/nnhnam/efrei-car-rental
 
 ## How to start the server
 
